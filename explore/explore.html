@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ExplorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pick Your Location</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h1>Select fom a list of Location to get started. </h1>
+<div text-justify>
+<p>Choose from any one our locations to start exploring available events from that location. Your selection will be updated if you change your mind. </p>
+</div>	
+
+
+	<ion-list  radio-group>
+  <ion-item  [ngClass]="{locationChosen: myDestination.getLocation() == lOption}" 
+  *ngFor="let lOption of myDestination.getLocationTypeOptions(); let i = index">
+<ion-label>
+	<ion-icon name="location" item-start></ion-icon>
+	Option {{i+1}}: <b>{{lOption.locationName}}</b>
+    	<br/>Title: {{lOption.title}}
+    	<br/>Price: €{{lOption.price}}
+    </ion-label>
+     <ion-radio (click)="chooseYourLocation(lOption)"></ion-radio>
+   </ion-item>
+</ion-list> 
+
+<button ion-button full color = "danger" (click)="goToHome()">Home</button>
+
+</ion-content>
