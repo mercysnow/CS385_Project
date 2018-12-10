@@ -1,0 +1,130 @@
+
+<ion-header>
+
+  <ion-navbar hideBackButton = true>
+    <ion-title>Questions </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+ <ion-slides pager>
+	 <ion-slide>
+		   <ion-list radio-group [(ngModel)]="userServiceData.location" name="location">
+		     <ion-list-header>
+		    Where are you?
+		  </ion-list-header>
+		 <ion-item>
+			    <ion-label>Dublin</ion-label>
+			    <ion-radio value="dublin" (click) = " goToSlide(0)"></ion-radio>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label>Cork</ion-label>
+		    <ion-radio value="cork" (click) = " goToSlide(0)"></ion-radio>
+		  </ion-item>
+	  	</ion-list>
+
+		
+	 </ion-slide>
+ 	
+    <ion-slide>
+    <ion-list radio-group [(ngModel)]="userServiceData.ageRange" name = "ageRange">
+	     <ion-list-header>
+	    Age range?
+	  </ion-list-header>
+	  	 <ion-item>
+	    <ion-label>Under 18</ion-label>
+	    <ion-radio value="under18" (click) = " goToSlide(1)"></ion-radio>
+	  </ion-item>
+
+	  
+
+	  <ion-item>
+	    <ion-label>Over 18</ion-label>
+	    <ion-radio value="over18" (click) = " goToSlide(1)"></ion-radio>
+	  </ion-item>
+  	</ion-list>
+
+    </ion-slide>
+      <ion-slide>
+       <ion-list radio-group  [(ngModel)]="userServiceData.priceRange" name="priceRange">
+	     <ion-list-header>
+			Price Range?
+    	 </ion-list-header>
+	  	 <ion-item>
+		    <ion-label>Free!</ion-label>
+		    <ion-radio value=0 (click) = " goToSlide(2)"></ion-radio>
+	 	 </ion-item>
+
+		 
+		   <ion-item>
+			    <ion-label>€20 or less</ion-label>
+			    <ion-radio value=20 (click) = " goToSlide(2)">
+		    	
+		    </ion-radio>
+			</ion-item>
+		    
+		
+		   <ion-item>
+			    <ion-label>€50 or less</ion-label>
+			    <ion-radio value=50 (click) = " goToSlide(2)">
+		    	
+		    </ion-radio>
+		  </ion-item>
+ 		 </ion-list>
+    </ion-slide>
+    
+     
+    <ion-slide>
+    <ion-list radio-group  [(ngModel)]="userServiceData.mood" name="mood">
+	     <ion-list-header>
+			What kinda mood are you in?
+    	 </ion-list-header>
+	  	 <ion-item>
+		    <ion-label>Hungry</ion-label>
+		    <ion-radio value="hungry" ></ion-radio>
+	 	 </ion-item>
+
+		  <ion-item>
+		    <ion-label>Active</ion-label>
+		    <ion-radio value="active" ></ion-radio>
+		  </ion-item>
+		   <ion-item>
+			   <ion-label>Musical</ion-label>
+			   <ion-icon name="musical-notes"></ion-icon>
+			   <ion-radio value="musical" >
+		    	
+		    </ion-radio>
+			</ion-item>
+		    <ion-item>
+			    <ion-label>Thirsty</ion-label>
+			    <ion-radio value="thirsty">
+		    	
+		    </ion-radio>
+		  </ion-item>
+		   <ion-item>
+			    <ion-label>Curious</ion-label>
+			    <ion-radio value="curious">
+		    	
+		    </ion-radio>
+
+		  </ion-item>
+		  
+ 
+ 		 </ion-list>
+<div class="d-flex justify-content-center">
+	 <ion-item> <button  ion-button round outline type="submit" (click) = "goToResults()">Submit</button> </ion-item>
+</div>
+    </ion-slide>
+</ion-slides>
+
+
+
+ 		
+ 		
+</form>
+
+</ion-content>

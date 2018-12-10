@@ -1,30 +1,22 @@
-import { RestProvider } from '../../providers/rest/rest';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { QuestionsPage } from '../../pages/questions/questions';
+import {SavedPage} from '../../pages/saved/saved';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-
 export class HomePage {
 
-  stockData: any;
+  constructor(public navCtrl: NavController) {
 
-
-  constructor(public navCtrl: NavController,public restProvider: RestProvider) {
-  this.getDataObjectsFromPromise();
   }
 
-getDataObjectsFromPromise() {
-	this.restProvider.getDataFromAPIViaPromise().then(data => {
-		console.log("Trying to access results from the Promise return");
-		console.log(data);
-		this.stockData = data;
-
-		console.log("Got results from the Promise");
-	});
-}
-
-
+  public goToQuestions(){
+  	this.navCtrl.push(QuestionsPage);  	
+  }
+  public goToSaved(){
+  	this.navCtrl.push(SavedPage); 
+  }
 }

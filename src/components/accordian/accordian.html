@@ -1,0 +1,16 @@
+<ion-card >
+
+  <ion-card-header   (click)="toggleAccordian()">
+  	{{title}}
+  	
+
+ 	</ion-card-header>
+
+
+	<ion-card-content  #cc> 
+	 <img   src="../assets/imgs/{{image}}"/>
+	{{content}}
+	<ion-item><button ion-button small (click)="addToSaved(result)">Save</button></ion-item>
+
+	</ion-card-content>	
+</ion-card>

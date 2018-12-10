@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar  hideBackButton = true>
+    <ion-title>Results</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+	  <accordian *ngFor = "let x of results" [result] = "x" [title] = "x.name" [content]="x.description" [image] = "x.image" [location]="x.location"></accordian>
+
+
+
+<div class="d-flex justify-content-xl-center">
+	<ion-item>
+		<button ion-button block outline (click)="goToHome()">Home</button>
+	</ion-item>
+	 <ion-item>
+		<button ion-button block outline (click)="goToQuestions()">Start again</button>
+	</ion-item>
+	 
+</div>
+
+</ion-content>
+
